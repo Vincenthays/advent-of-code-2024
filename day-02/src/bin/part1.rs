@@ -23,10 +23,9 @@ fn main() {
             println!("is_level_inc: {}", is_level_inc);
             println!("is_level_dec: {}", is_level_dec);
 
-            if is_level_inc || is_level_dec {
-                1
-            } else {
-                0
+            match is_level_inc || is_level_dec {
+                true => 1,
+                false => 2,
             }
         })
         .sum();
