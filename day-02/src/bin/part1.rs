@@ -10,13 +10,14 @@ fn main() {
                 .collect::<Vec<u32>>();
 
             let is_level_inc = levels
-                .windows(2)
-                .into_iter()
-                .all(|l| l[0] < l[1] && l[1] <= l[0] + 3);
+                .iter()
+                .zip(levels.iter().skip(1))
+                .all(|(&a, &b)| a < b && a <= b + 3);
+
             let is_level_dec = levels
-                .windows(2)
-                .into_iter()
-                .all(|l| l[0] > l[1] && l[0] <= l[1] + 3);
+                .iter()
+                .zip(levels.iter().skip(1))
+                .all(|(&a, &b)| a > b && a <= b + 3);
 
             println!("levels: {:?}", levels);
             println!("is_level_inc: {}", is_level_inc);
