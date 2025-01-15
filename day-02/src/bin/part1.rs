@@ -25,7 +25,7 @@ fn main() {
 
             match is_level_inc || is_level_dec {
                 true => 1,
-                false => 2,
+                false => 0,
             }
         })
         .sum();
