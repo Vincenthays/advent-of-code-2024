@@ -1,5 +1,3 @@
-use std::ops::Index;
-
 fn main() {
     let (order, manuals) = include_str!("input.txt").split_once("\n\n").unwrap();
     let order = order
